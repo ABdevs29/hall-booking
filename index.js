@@ -2,7 +2,7 @@ import express, { request, response } from "express";
 const app = express();
 app.use(express.json());
 
-const PORT = 5100;
+const PORT = process.env.PORT;
 //Local variable to store rooms data
 const rooms = [
   {
