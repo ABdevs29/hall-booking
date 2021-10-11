@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "54164c74-09fb-43b3-a8c4-99cac2817eef",
+		"name": "Hall Booking API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5100",
+					"host": [
+						"localhost"
+					],
+					"port": "5100"
+				},
+				"description": "Home route"
+			},
+			"response": []
+		},
+		{
+			"name": "Booking room using Room ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"roomID\": 3,\n      \"customerName\": \"Mahantesh\",\n      \"date\": \"16/10/2021\",\n      \"startTime\": 1000,\n      \"endTime\": 1900\n    \n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5100/rooms",
+					"host": [
+						"localhost"
+					],
+					"port": "5100",
+					"path": [
+						"rooms"
+					]
+				},
+				"description": "Sample Input:\n\n```\n  {\n    \"roomID\": number,\n      \"customerName\": \"string\",\n      \"date\": \"dd/mm/yyyy\",\n      \"startTime\": 1000,\n      \"endTime\": 1900\n    \n  }\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Rooms with booking data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5100/rooms",
+					"host": [
+						"localhost"
+					],
+					"port": "5100",
+					"path": [
+						"rooms"
+					]
+				},
+				"description": "Get rooms with Booking data"
+			},
+			"response": []
+		},
+		{
+			"name": "Create new room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"roomID\": 6,\n    \"roomName\": \"306\",\n    \"noOfSeatsAvailable\": \"3\",\n    \"amenities\": [\"Hot shower\", \"WIFI\", \"Intercom\", \"Room service\"],\n    \"pricePerHr\": 130,\n    \"bookedStatus\": true,\n    \"customerDetails\": {\n      \"customerName\": \"Mahantesh\",\n      \"date\": \"16/10/2021\",\n      \"startTime\": 1000,\n      \"endTime\": 1900\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5100/rooms/create",
+					"host": [
+						"localhost"
+					],
+					"port": "5100",
+					"path": [
+						"rooms",
+						"create"
+					]
+				},
+				"description": "Sample Input:\n\n```\n  {\n    \"roomID\": number,\n    \"roomName\": \"string\",\n    \"noOfSeatsAvailable\": \"string\",\n    \"amenities\": [array],\n    \"pricePerHr\": number,\n    \"bookedStatus\": boolean,\n    \"customerDetails\": {\n      \"customerName\": \"string\",\n      \"date\": \"dd/mm/yyyy\",\n      \"startTime\": 1000,\n      \"endTime\": 1900\n    }\n  }\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customers with booking data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5100/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "5100",
+					"path": [
+						"customers"
+					]
+				},
+				"description": "Get Customers with booking data"
+			},
+			"response": []
+		}
+	]
+}
